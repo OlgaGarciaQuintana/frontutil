@@ -216,11 +216,11 @@ export const routes: Routes = [
   //
   { path: 'garcia', component: RoutedUserPlistGarcia },
   { path: 'garcia/post/:id', component: RoutedUserViewGarcia },
-  { path: 'garcia/plist', component: RoutedAdminPlistGarcia },
-  { path: 'garcia/view/:id', component: RoutedAdminViewGarcia },
-  { path: 'garcia/new', component: RoutedAdminNewGarcia },
-  { path: 'garcia/edit/:id', component: RoutedAdminEditGarcia },
-  { path: 'garcia/remove/:id', component: RoutedAdminRemoveGarcia },
+  { path: 'garcia/plist', component: RoutedAdminPlistGarcia, canActivate: [AdminGuard] },
+  { path: 'garcia/view/:id', component: RoutedAdminViewGarcia, canActivate: [AdminGuard] },
+  { path: 'garcia/new', component: RoutedAdminNewGarcia, canActivate: [AdminGuard] },
+  { path: 'garcia/edit/:id', component: RoutedAdminEditGarcia, canActivate: [AdminGuard] },
+  { path: 'garcia/remove/:id', component: RoutedAdminRemoveGarcia, canActivate: [AdminGuard] },
   //
   { path: 'castanyera', component: CastanyeraRoutedUserPlist },
   { path: 'castanyera/post/:id', component: CastanyeraRoutedUserView },
